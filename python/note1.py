@@ -1,4 +1,8 @@
-import pizza
+import pizza   #导入整个模块
+from pizza import make_pizza   #从指定模块导入指定函数，此时在调用函数时无需指明模块的名字
+from pizza import make_pizza as mp   #使用as给函数指定别名
+import pizza as p   #为模块指定别名
+from pizza import *   #导入模块中的所有函数，此时调用函数时无需使用点号
 
 message = "Hello World!"
 print(message)
@@ -214,7 +218,7 @@ while message != 'quit':
 #break语句可退出循环，continue语句可跳过余下部分重新执行循环  
 
 #无返回值函数
-def describe_pet(pet_name,animal_type = "dog"):   #可为形参提供初始值
+def describe_pet(pet_name,animal_type="dog"):   #可为形参提供初始值，注意指定默认值时等号左右不要有空格
     print(f"You have a {animal_type}")
     print(f"It's name is {pet_name}\n") 
 
@@ -252,7 +256,7 @@ show_food(have_eaten)    #函数中对列表做的任何修改都是永久的
 #传递任意数量的实参
 '''def make_pizza(*toppings):   # *号会使python创建一个名为toppings的元组
     print(toppings)'''
-pizza.make_pizza('mushrooms','green peppers','extra cheese')
+pizza.make_pizza('mushrooms','green peppers','extra cheese')   #module_name.function_name()
 #若要使函数接收不同类型的实参，则接受任意数量实参的形参应放于后面
 
 #使用任意数量的关键字实参
